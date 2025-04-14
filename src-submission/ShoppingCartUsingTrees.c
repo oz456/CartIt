@@ -226,7 +226,12 @@ int main() {
                 printf("Enter quantity to add: ");
                 scanf("%d", &qty);
                 printf("\n--------------\n");
-                addToCart(&cart, searchProduct(root, id), qty);
+                if(qty <= 0){
+                    printf("Invalid quantity to add!\n");
+                }
+                else{
+                    addToCart(&cart, searchProduct(root, id), qty);
+                }
                 printf("--------------\n");
                 break;
             case 3:
@@ -235,7 +240,12 @@ int main() {
                 printf("Enter quantity to remove: ");
                 scanf("%d", &removeQty);
                 printf("\n--------------\n");
-                removeFromCart(&cart, root, id, removeQty);
+                if(removeQty <= 0){
+                    printf("Invalid quantity to remove!\n");
+                }
+                else{
+                    removeFromCart(&cart, root, id, removeQty);
+                }
                 printf("--------------\n");
                 break;
             case 4:
